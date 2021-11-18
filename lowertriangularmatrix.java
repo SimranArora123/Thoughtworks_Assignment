@@ -11,19 +11,15 @@ public class lowertriangularmatrix {
                 arr[i][j]= sc.nextInt();
             }
         }
-        boolean isuppertriangular=true;
+        int islower=1;
         for(int i=0;i<row;i++){
-            for(int j=0;j<i;j++){
-                if(arr[i][j]!=0){
-                    isuppertriangular=false;
-                    break;
+            for(int j=0;j<col;j++) {
+                if(j > i && arr[i][j] != 0) {
+                    islower = 0;
                 }
             }
-            if(!isuppertriangular){
-                break;
-            }
         }
-        if(isuppertriangular){
+        if(islower==1){
             System.out.println("Yes");
         }
         else{
